@@ -36,7 +36,7 @@ const Form = ({
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        fetch(`http://localhost:5000/calculate/${side_a != '' ? side_a : 0 }/${side_b != '' ? side_b : 0 }/${hipo_c != '' ? hipo_c : 0 }/`, {
+        fetch(`https://flask-server-cromai.rzschrb.repl.co/calculate/${side_a != '' ? side_a : 0 }/${side_b != '' ? side_b : 0 }/${hipo_c != '' ? hipo_c : 0 }/`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
