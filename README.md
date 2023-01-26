@@ -1,12 +1,12 @@
 
-# Space Cromai Front End
+# Space Cromai Front End 🧑‍🚀
 
 Front End para a calculadora de teorema de pitagoras desenvolvido para o desafio do Space Cromai proposto pela Cromai.
 
 Desenvolvido utilizando React, TypeScript e Vite.
 
 
-## Instalação
+## Instalação ⚙️
 
 Clone o repositorio (estarei usando clone por HTTPS) e instale as dependencias utilizando o npm.
 
@@ -24,7 +24,7 @@ Após as dependencias serem instaladas apenas utilize o comando a seguir para ab
 
 Ele irá abrir abrir um `localhost` na porta `5173` permitindo você acessar pelo seu navegador na seguinte url: `http://localhost:5173/`
     
-## Deploy
+## Deploy 🚀
 
 Para fazer o deploy desse projeto você pode utilizar o Vercel ou outro provedor.
 
@@ -40,7 +40,7 @@ Ou como está sendo utilizado o vite, você pode usar:
 
 Como padrão a Vercel já configura automaticamente um projeto Vite e você pode facilmente fazer o deploy.
 
-## Uso/Exemplos
+## Uso/Exemplos 🗒️
 
 #### Como utilizar
 
