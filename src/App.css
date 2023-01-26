@@ -5,6 +5,7 @@
     flex: 1;
 }
 
+/* Painel do lado esquerdo */
 .side-panel {
     display: flex;
     flex-direction: column;
@@ -16,6 +17,7 @@
     height: 100%;
 }
 
+/* Titulo do painel */
 .title {
     writing-mode: vertical-rl;
     text-orientation: upright;
@@ -23,6 +25,7 @@
     font-weight: bold;
 }
 
+/* Linkedin e Github*/
 .anchors {
     display: flex;
     flex-direction: column;
@@ -93,6 +96,7 @@
     margin: 0 0.5rem;
 }
 
+/* Conteudo principal */
 .content-wrapper {
     display: flex;
     flex-direction: column;

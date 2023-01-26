@@ -1,22 +1,31 @@
-import { useState, useEffect } from 'react'
-import './App.css'
+import { useState } from 'react'
+
+// Importe dos icones
 import iconGithub from './assets/icon_github.svg'
 import iconLinkedin from './assets/icon_linkedin.svg'
 import iconReact from './assets/icon_react.svg'
 import iconVite from './assets/icon_vite.svg'
 import iconPython from './assets/icon_python.svg'
 import iconFlask from './assets/icon_flask.svg'
+
+// Importe dos componentes
 import Triangle from './components/Triangle'
 import Form from './components/Form'
 
+// Importe do CSS 
+import './App.css'
+
 function App() {
+  // Links para o github e linkedin
   const github:string = 'https://github.com/rzschrb'
   const linkedin:string = 'https://www.linkedin.com/in/ricardo-schreiber-94b9a020b/'
 
+  // States para armazenar os valores dos lados do triângulo
   const [sideValueA, setSideValueA] = useState('');
   const [sideValueB, setSideValueB] = useState('');
   const [sideValueC, setSideValueC] = useState('');
 
+  // Função para atualizar os valores dos lados do triângulo
   const onChangeTriangleSide = (side: string, sideValue: string) => {
     switch (side) {
       case 'a':
@@ -31,7 +40,7 @@ function App() {
       default:
         break;
     }
-}
+  }
 
   return (
     <div className="App">

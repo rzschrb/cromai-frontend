@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Triangle.css"
 
 
+// TriangleProps: Props para trocar os valores dos lados do triângulo
 interface TriangleProps {
     side_a: string;
     side_b: string;
@@ -14,6 +15,7 @@ const Triangle = ({
     hipo_c,
   }: TriangleProps): JSX.Element => {
 
+    // Função para truncar o texto
     const truncateStr = (text: string, limit: number): string => {
         if (text.length > limit) {
           return text.substring(0, limit) + "...";
