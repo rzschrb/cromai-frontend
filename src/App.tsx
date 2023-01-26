@@ -8,8 +8,6 @@ import iconPython from './assets/icon_python.svg'
 import iconFlask from './assets/icon_flask.svg'
 import Triangle from './components/Triangle'
 import Form from './components/Form'
-import type { Result } from './components/Form'
-
 
 function App() {
   const github:string = 'https://github.com/rzschrb'
@@ -31,7 +29,7 @@ function App() {
 
   // create simple function to call a alert saying hello world
   const helloWorld = () => {
-    console.log(result.id)
+    console.log("Hello")
   }
 
   return (
