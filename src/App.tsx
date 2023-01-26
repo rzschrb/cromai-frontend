@@ -13,19 +13,25 @@ function App() {
   const github:string = 'https://github.com/rzschrb'
   const linkedin:string = 'https://www.linkedin.com/in/ricardo-schreiber-94b9a020b/'
 
-  const [aSideValue, setASideValue] = useState('');
-  const [bSideValue, setBSideValue] = useState('');
-  const [cSideValue, setCSideValue] = useState('');
+  const [sideValueA, setSideValueA] = useState('');
+  const [sideValueB, setSideValueB] = useState('');
+  const [sideValueC, setSideValueC] = useState('');
 
   const onChangeTriangleSide = (side: string, sideValue: string) => {
-    if(side === 'a') {
-      setASideValue(sideValue);
-    } else if (side === 'b') {
-      setBSideValue(sideValue);
-    } else if (side === 'c') {
-      setCSideValue(sideValue);
+    switch (side) {
+      case 'a':
+        setSideValueA(sideValue);
+        break;
+      case 'b':
+        setSideValueB(sideValue);
+        break;
+      case 'c':
+        setSideValueC(sideValue);
+        break;
+      default:
+        break;
     }
-  }
+}
 
   return (
     <div className="App">
@@ -49,7 +55,7 @@ function App() {
             <Form onChangeTriangleSide={onChangeTriangleSide}/>
           </div>
           <div className='triangle-container'>
-            <Triangle side_a={aSideValue} side_b={bSideValue} hipo_c={cSideValue}/>
+            <Triangle side_a={sideValueA} side_b={sideValueB} hipo_c={sideValueC}/>
           </div>
         </div>
         <div className='footer'>

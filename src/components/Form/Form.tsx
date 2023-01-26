@@ -1,39 +1,64 @@
 import React, { useState, useEffect } from "react";
 import "./Form.css"
 
-
+// FromProps: Props para trocar os valores dos lados do triângulo
 interface FormProps {
     onChangeTriangleSide: (side: string, sideValue: string) => void;
 }
 
+// Result: Interface para receber o resultado da requisição
 export interface Result {
     id: string;
     response: string;
 }
 
+// Form: Componente para receber os valores dos lados do triângulo
 const Form = ({
     onChangeTriangleSide,
   }: FormProps): JSX.Element => {
+    // States para armazenar os valores dos lados do triângulo
     const [side_a, setSideA] = useState<string>("");
     const [side_b, setSideB] = useState<string>("");
     const [hipo_c, setHipoC] = useState<string>("");
 
+    // State para armazenar o resultado da requisição
     const [result, setResult] = useState<Result>({ id: '', response: '' });
 
+    // Função para enviar os valores dos lados do triângulo para o componente pai
     const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>, side: 'a' | 'b' | 'c') => {
         const inputValue = event.target.value;
         if (side === 'a') {
-            (side_b === '' || hipo_c === '') && parseInt(inputValue) > 0 ? setSideA(inputValue) : setSideA('');
-            onChangeTriangleSide('a', inputValue);
+            if ((side_b === '' || hipo_c === '') && parseInt(inputValue) > 0) {
+                setSideA(inputValue);
+                onChangeTriangleSide('a', inputValue);
+            } else {
+                setSideA('');
+            }
         } else if (side === 'b') {
-            (side_a === '' || hipo_c === '') && parseInt(inputValue) > 0 ? setSideB(inputValue) : setSideB('');
-            onChangeTriangleSide('b', inputValue);
+            if ((side_a === '' || hipo_c === '') && parseInt(inputValue) > 0) {
+                setSideB(inputValue);
+                onChangeTriangleSide('b', inputValue);
+            } else {
+                setSideB('');
+            }
         } else if (side === 'c') {
-            (side_a === '' || side_b === '') && parseInt(inputValue) > 0 ? setHipoC(inputValue) : setHipoC('');
-            onChangeTriangleSide('c', inputValue);
+            if ((side_a === '' || side_b === '') && parseInt(inputValue) > 0) {
+                setHipoC(inputValue);
+                onChangeTriangleSide('c', inputValue);
+            } else {
+                setHipoC('');
+            }
         }
     }
 
+    // Função para resetar os valores dos lados do triângulo
+    const resetValues = () => {
+        setSideA("");
+        setSideB("");
+        setHipoC("");
+    }
+
+    // Função para enviar os valores dos lados do triângulo para o servidor
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         fetch(`https://flask-server-cromai.rzschrb.repl.co/calculate/${side_a != '' ? side_a : 0 }/${side_b != '' ? side_b : 0 }/${hipo_c != '' ? hipo_c : 0 }/`, {
@@ -47,6 +72,7 @@ const Form = ({
             setResult(data);
             console.log(result);
         });
+        resetValues();
     }
 
     return (
