@@ -1,0 +1,36 @@
+/* Triangle */
+.triangle {
+    position: relative;
+    width: 0;
+    height: 0;
+    border-bottom: 200px solid var(--base-blue);
+    border-right: 200px solid transparent;
+}
+
+.side-a, .side-b, .hipo-c{
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+}
+
+
+.side-a {
+    width: max-content;
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+}
+
+.side-b {
+    width: max-content;
+    position: absolute;
+    top: 14rem;
+    left: 3rem;
+}
+
+.hipo-c {
+    width: max-content;
+    position: absolute;
+    top: 4rem;
+    left: 8rem;
+}
+
