@@ -14,17 +14,24 @@ const Triangle = ({
     hipo_c,
   }: TriangleProps): JSX.Element => {
 
+    const truncateStr = (text: string, limit: number): string => {
+        if (text.length > limit) {
+          return text.substring(0, limit) + "...";
+        }
+        return text;
+    };
+
     return (
         <div className="triangle-wrapper">
             <div className="triangle">
                 <div className="side-a">
-                    <p className="side-a-label">Cateto A = {side_a ? <span>{side_a}</span> : <span>?</span>}</p>
+                    <p className="side-a-label">Cateto A = {side_a ? <span>{truncateStr(side_a, 10)}</span> : <span>?</span>}</p>
                 </div>
                 <div className="side-b">
-                    <p className="side-b-label">Cateto B = {side_b ? <span>{side_b}</span> : <span>?</span>}</p>
+                    <p className="side-b-label">Cateto B = {side_b ? <span>{truncateStr(side_b, 10)}</span> : <span>?</span>}</p>
                 </div>
                 <div className="hipo-c">
-                    <p className="hipo-c-label">Hipotenusa C = {hipo_c ? <span>{hipo_c}</span> : <span>?</span>}</p>
+                    <p className="hipo-c-label">Hipotenusa C = {hipo_c ? <span>{truncateStr(hipo_c, 10)}</span> : <span>?</span>}</p>
                 </div>
             </div>
         </div>

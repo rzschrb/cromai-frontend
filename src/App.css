@@ -42,6 +42,11 @@
     font-weight: 900;
     line-height: 1.3rem;
     margin: 0 0.5rem;
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+.anchor-github:hover {
+    box-shadow: 0 0 0 2px var(--base-white), 0 0 0 4px var(--base-black);
 }
 
 .anchor-linkedin {
@@ -57,6 +62,11 @@
     font-weight: 900;
     line-height: 1.25rem;
     margin: 0 0.5rem;
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+.anchor-linkedin:hover {
+    box-shadow: 0 0 0 2px var(--base-blue), 0 0 0 4px var(--base-black);
 }
 
 .icon-github {
@@ -176,5 +186,27 @@
         display: flex;
         flex-direction: row;
         gap: 1rem;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding-top: 2rem;
+    }
+
+    .form-container {
+        padding: 1rem 1rem;
+        background-color: var(--base-white);
+        border-radius: 1.5rem;
+    }
+
+    .triangle-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 5rem;
     }
   }

@@ -82,19 +82,19 @@ const Form = ({
                     <div className="form-group-label">
                         <label htmlFor="side_a">Cateto A</label>
                     </div>
-                    <input type="text" id="side_a" name="side_a" value={side_a} onChange={(e) => handleOnChange(e, 'a')} placeholder="Digite o valor do cateto A"/>
+                    <input type="number" id="side_a" name="side_a" value={side_a} onChange={(e) => handleOnChange(e, 'a')} placeholder="Digite o valor do cateto A"/>
                 </div>
                 <div className="form-group">
                     <div className="form-group-label">
                         <label htmlFor="side_b">Cateto B</label>
                     </div>
-                    <input type="text" id="side_b" name="side_b" value={side_b} onChange={(e) => handleOnChange(e, 'b')} placeholder="Digite o valor do cateto B"/>
+                    <input type="number" id="side_b" name="side_b" value={side_b} onChange={(e) => handleOnChange(e, 'b')} placeholder="Digite o valor do cateto B"/>
                 </div>
                 <div className="form-group">
                     <div className="form-group-label">
                         <label htmlFor="hipo_c">Hipotenusa C</label>
                     </div>
-                    <input type="text" id="hipo_c" name="hipo_c" value={hipo_c} onChange={(e) => handleOnChange(e, 'c')} placeholder="Digite o valor da hipotenusa C"/>
+                    <input type="number" id="hipo_c" name="hipo_c" value={hipo_c} onChange={(e) => handleOnChange(e, 'c')} placeholder="Digite o valor da hipotenusa C"/>
                 </div>
                 <button className="submitButton" type="submit">Calcular</button>
             </form>
