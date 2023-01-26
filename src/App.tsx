@@ -27,11 +27,6 @@ function App() {
     }
   }
 
-  // create simple function to call a alert saying hello world
-  const helloWorld = () => {
-    console.log("Hello")
-  }
-
   return (
     <div className="App">
       <div className='side-panel'>

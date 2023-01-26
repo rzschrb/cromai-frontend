@@ -11,14 +11,14 @@ export interface Result {
     response: string;
 }
 
-let result: Result;
-
 const Form = ({
     onChangeTriangleSide,
   }: FormProps): JSX.Element => {
     const [side_a, setSideA] = useState<string>("");
     const [side_b, setSideB] = useState<string>("");
     const [hipo_c, setHipoC] = useState<string>("");
+
+    const [result, setResult] = useState<Result>({ id: '', response: '' });
 
     const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>, side: 'a' | 'b' | 'c') => {
         const inputValue = event.target.value;
@@ -43,8 +43,8 @@ const Form = ({
             },
         })
         .then((response) => response.json())
-        .then(({id, response}) => {
-            result = {id, response};
+        .then((data) => {
+            setResult(data);
             console.log(result);
         });
     }
@@ -72,6 +72,16 @@ const Form = ({
                 </div>
                 <button className="submitButton" type="submit">Calcular</button>
             </form>
+            {result.response !== '' ? 
+                <div className="form-result">
+                    <div className="form-result-title">
+                        <p>Resultado</p>
+                    </div>
+                    <div className="form-result-content">
+                        <p>{result.response}</p>
+                    </div>
+                </div> 
+            : null}
         </div>
     );
 };
